@@ -1,0 +1,75 @@
+/*configuraciones globales*/
+:root{ 
+    --colorppal: #000
+}
+
+.logotipo{
+width: 70px;
+height: 45px;
+}
+
+.navegacion{
+    width: 50px;
+    height: 50px; 
+}
+
+body {
+    overflow-x: hidden;/*oculta la barra de desplazamiento horizontal*/
+}
+
+/*carrusel*/
+.alto{
+    height: 36rem;
+}
+
+/*imagenes para la carta*/
+.card-img-top{
+    width: 100%;
+    height: 300px;
+}
+
+#carta .titulo{
+    width: 100%;
+    text-align: center;
+
+}
+
+#servicios{
+    background-color: chocolate;
+    width: 100%;
+    height: 300px;
+}
+
+#servicios .tituloser{
+    width: 100%;
+    text-align: center;
+}
+
+/*contacto*/
+section{
+    width: 100%;
+    background-color:chocolate !important;
+}
+#contacto{
+    width: 100%;
+    text-align: center;
+}
+
+#contacto input,textarea{
+    width: 600px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#contacto .titulo{
+    color:black;
+}
+
+/*footer*/
+footer {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: aliceblue;
+    padding: 20px 0;
+}
