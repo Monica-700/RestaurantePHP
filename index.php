@@ -31,7 +31,7 @@
                             <a class="nav-link" href="#carta"> La carta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Consultar productos </a>
+                            <a class="nav-link" href="consultarProductos.php">Consultar productos </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#servicios">Servicios</a>

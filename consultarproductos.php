@@ -88,7 +88,7 @@ $conn = mysqli_connect($host,$user,$pw,$db);
                         <td><?php echo $row['nombreProducto']?></td>
                         <td><?php echo $row['precio']?></td>
                         <td><?php echo $row['descripcion']?></td>
-                        <td><?php echo "<img src= 'img/Casuela.jpg" .$row['imagen']."'width= '50' height='50'>";""?></td>
+                        <td><?php echo "<img src='Img/".$row['imagen']."'width= '50' height='50'>";""?></td>
                         </tr>
                     <?php
                     }
