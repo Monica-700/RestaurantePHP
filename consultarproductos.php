@@ -1,3 +1,17 @@
+<?php
+ob_start();
+?>
+
+<?php
+include_once 'conexion.php';
+
+$conn = mysqli_connect($host,$user,$db;$pw);
+
+/*if(isset($_SESSION['idcliente'])==false){
+    header(location: 'index.php');
+}*/
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +45,7 @@
                             <a class="nav-link" href="#carta"> La carta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Consultar productos </a>
+                            <a class="nav-link" href="consultaproductos">Consultar productos </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#servicios">Servicios</a>
@@ -69,6 +83,46 @@
           </div>
 
     <!--La carta-->
+
+    <!--consulta de productos-->
+    <div class="row ow-cols-1 row-cols-md-4 g-4 p-5" id="productos">
+            <H2>Productos</H2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre del producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Imagen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    include_once "conexion.php";
+                    //crear la conexión a la bd
+                    $conn = mysqli_connect($host,$user,$pw,$db);
+                    //crear una consulta a la base de datos
+                    $sql = "SELECT * FROM productos;";
+                    //preparar el array de resultados
+                    $resul = mysqli_query($conn,$sql);
+                    //estructura de loop para imprimir n datos while
+                    while ($row = mysqli_fetch_assoc($resul)){
+                    ?>
+                    
+                    <tr>
+                        <td><?php echo $row['nombreProducto']?></td>
+                        <td><?php echo $row['precio']?></td>
+                        <td><?php echo $row['descripcion']?></td>
+                        <td><?php echo "<img src= 'img/" .$row['imagen']."'width= '50' height='50'>";""?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
     <main>
         <div class="row ow-cols-1 row-cols-md-3 g-4 p-5" id="carta">
             <!--metodo abreviado para agregar etiquetas con clases o id
