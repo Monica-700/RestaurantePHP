@@ -5,7 +5,7 @@ ob_start();
 <?php
 include_once 'conexion.php';
 
-$conn = mysqli_connect($host,$user,$db;$pw);
+$conn = mysqli_connect($host,$user,$pw,$db);
 
 /*if(isset($_SESSION['idcliente'])==false){
     header(location: 'index.php');
@@ -44,7 +44,7 @@ $conn = mysqli_connect($host,$user,$db;$pw);
                             <a class="nav-link" href="#carta"> La carta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="consultarproductos.php">Consultar productos </a>
+                            <a class="nav-link" href="consultarProductos.php">Consultar productos </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#servicios">Servicios</a>
