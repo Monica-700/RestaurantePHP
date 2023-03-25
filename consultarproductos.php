@@ -59,31 +59,31 @@ $conn = mysqli_connect($host, $user, $pw, $db);
     <!--consulta de productos-->
     <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="productos">
         <H2>Productos</H2>
-        <div class="col">
-            <?php
-            include_once "conexion.php";
-            //crear la conexión a la bd
-            $conn = mysqli_connect($host, $user, $pw, $db);
-            //crear una consulta a la base de datos
-            $sql = "SELECT * FROM productos;";
-            //preparar el array de resultados
-            $resul = mysqli_query($conn, $sql);
-            //estructura de loop para imprimir n datos while
-            while ($row = mysqli_fetch_assoc($resul)) {
-            ?>
-      
-            <div class="card">
-                <?php echo "<img src='Img/" .$row['imagen']."' width='100%' heigth='300'>";""?>
-                <div class="card-body">
-                    <h5 class="card-tittle"><?php echo $row['nombreProducto']?></h5>
-                    <?php echo $row['descripcion']?>
-                    <p><span>$<?php echo $row['precio']?></span></p>
-                    <a href="https://wa.me/3008504573?text=%C2%BFDe%20qu%C3%A9%20te%20deseas%20antojar%20hoy%3F" class="btn btn-danger" target="_blank"> Pedir</a>              
+        <?php
+        include_once "conexion.php";
+        //crear la conexión a la bd
+        $conn = mysqli_connect($host, $user, $pw, $db);
+        //crear una consulta a la base de datos
+        $sql = "SELECT * FROM productos;";
+        //preparar el array de resultados
+        $resul = mysqli_query($conn, $sql);
+        //estructura de loop para imprimir n datos while
+        while ($row = mysqli_fetch_assoc($resul)) {
+        ?>
+            <div class="col">
+                <div class="card">
+                    <?php echo "<img src='Img/" . $row['imagen'] . "' width='100%' heigth='300'>";
+                    "" ?>
+                    <div class="card-body">
+                        <h5 class="card-tittle"><?php echo $row['nombreProducto'] ?></h5>
+                        <?php echo $row['descripcion'] ?>
+                        <p><span>$<?php echo $row['precio'] ?></span></p>
+                        <a href="https://wa.me/3008504573?text=%C2%BFDe%20qu%C3%A9%20te%20deseas%20antojar%20hoy%3F" class="btn btn-danger" target="_blank"> Pedir</a>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php
-            }
+        }
         ?>
     </div>
 

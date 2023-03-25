@@ -54,6 +54,12 @@ body {
     text-align: center;
 }
 
+.Img{
+    width: 100% !important;
+    height: 300px;
+    padding: 3,5px;
+
+}
 /*contacto*/
 section{
     width: 100%;
