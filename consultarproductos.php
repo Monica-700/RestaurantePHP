@@ -72,7 +72,7 @@ $conn = mysqli_connect($host, $user, $pw, $db);
         ?>
             <div class="col">
                 <div class="card">
-                    <?php echo "<img src='Img/" . $row['imagen'] . "' width='100%' heigth='300'>";
+                    <?php echo "<img src='Img/" . $row['imagen'] . "' class='img-responsive rounded img'>";
                     "" ?>
                     <div class="card-body">
                         <h5 class="card-tittle"><?php echo $row['nombreProducto'] ?></h5>
