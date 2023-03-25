@@ -39,16 +39,16 @@ $conn = mysqli_connect($host, $user, $pw, $db);
                         <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#carta"> La carta</a>
+                        <a class="nav-link" href="index.php#carta"> La carta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="consultarProductos.php">Consultar productos </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
+                        <a class="nav-link" href="index.php#servicios">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contáctanos </a>
+                        <a class="nav-link" href="index.php#contacto">Contáctanos </a>
                     </li>
 
                 </ul>
@@ -57,7 +57,7 @@ $conn = mysqli_connect($host, $user, $pw, $db);
     </nav>
 
     <!--consulta de productos-->
-    <div class="row ow-cols-1 row-cols-md-4 g-4 p-5" id="productos">
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="productos">
         <H2>Productos</H2>
         <div class="col">
             <?php
@@ -73,7 +73,7 @@ $conn = mysqli_connect($host, $user, $pw, $db);
             ?>
       
             <div class="card">
-                <?php echo "<img src='Img/" .$row['imagen']."' width='100%' heigth='380'>";""?>
+                <?php echo "<img src='Img/" .$row['imagen']."' width='100%' heigth='300'>";""?>
                 <div class="card-body">
                     <h5 class="card-tittle"><?php echo $row['nombreProducto']?></h5>
                     <?php echo $row['descripcion']?>

@@ -1,6 +1,6 @@
 <?php
 $host= 'localhost';
 $user= 'root';
-$db= 'restaurate';
+$db= 'restaurante';
 $pw='';
 ?>

@@ -44,6 +44,15 @@ body {
     width: 100%;
     text-align: center;
 }
+#productos {
+   margin-top: 80px !important;
+    
+}
+
+#productos h2{
+    width: 100%;
+    text-align: center;
+}
 
 /*contacto*/
 section{
