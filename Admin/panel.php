@@ -121,7 +121,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearLibro" || $modulo=="editarLibro")? " active":" ";?>">
+            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearProducto" || $modulo=="editarProducto")? " active":" ";?>">
              <i class="fas fa-book nav-icon"></i>
               <p>
                 Productos
@@ -182,7 +182,7 @@
     ?>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="#">Jorge Grajales</a>.</strong>
+    <strong>Copyright &copy; 2023 <a href="#">Mónica Pineda</a>.</strong>
    Todos los derechos reservados.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
@@ -246,7 +246,7 @@
 </script>
 
 <script>
-$('#crearLibro').submit(function(){
+$('#crearProducto').submit(function(){
   if($('#nombre').val()=='' ||    
     $('#isbn').val()=='' || 
     $('#precio').val()=='' 
@@ -273,12 +273,12 @@ $('#crearLibro').submit(function(){
 </script>
 
 
-<!--confirmacion de eliminacion de libro-->
+<!--confirmacion de eliminacion de producto-->
 <script>
   $(document).ready(function(){
-    $(".borrarLibro").click(function (e){
+    $(".borrarProducto").click(function (e){
       e.preventDefault();
-      var eliminar=confirm("Desea eliminar el libro?");
+      var eliminar=confirm("Desea eliminar el Producto?");
       if(eliminar==true){
         var link=$(this).attr("href");
         window.location=link;
