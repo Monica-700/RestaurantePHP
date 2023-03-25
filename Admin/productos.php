@@ -9,7 +9,7 @@ if (isset($_SESSION['idusuario']) == false) {
 if (isset($_REQUEST['idBorrar'])) {
   $idproducto = mysqli_real_escape_string($conn, $_REQUEST['idBorrar'] ?? '');
   //instruccion para eliminar con lenguaje sql
-  $sql = "DELETE FROM productos WHERE idproducto='" . $idproducto . "';";
+  $sql = "DELETE FROM productos WHERE idproducto='" .$idproducto. "';";
   $result = mysqli_query($conn, $sql);
   if ($result) {
 ?>
