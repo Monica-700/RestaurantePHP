@@ -23,6 +23,7 @@ $conn = mysqli_connect($host, $user, $pw, $db);
     <title>Restaurante M.P</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="Img/LOGO-removebg-preview-_1_.ico" type="image/x-icon">
 </head>
 
 <body>
