@@ -176,19 +176,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="Img/Casuela.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="https://wa.me/3008504573?text=%C2%BFDe%20qu%C3%A9%20te%20quieres%20antojar%20hoy%3F"
-                            class="btn btn-primary" target="_blank">Agregar al menú</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
