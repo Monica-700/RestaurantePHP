@@ -121,7 +121,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearProducto" || $modulo=="editarProducto")? " active":" ";?>">
+            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearProducto" || $modulo=="editarProductos")? " active":" ";?>">
              <i class="fas fa-book nav-icon"></i>
               <p>
                 Productos
@@ -170,8 +170,8 @@
       include_once "productos.php";
     }
 
-    if($modulo=="crearProductos"){
-      include_once "crearproductos.php";
+    if($modulo=="crearProducto"){
+      include_once "crearProductos.php";
     }
 
     if($modulo=="editarProductos"){
@@ -246,12 +246,12 @@
 </script>
 
 <script>
-$('#crearProducto').submit(function(){
-  if($('#nombre').val()=='' ||    
-    $('#isbn').val()=='' || 
-    $('#precio').val()=='' 
+$('#crearProductos').submit(function(){
+  if($('#nombreProducto').val()=='' ||    
+    $('#precio').val()=='' || 
+    $('#descripcion').val()=='' 
       ){ 
-    alert('Digitar los campos de Nombre, ISBN y Precio ') 
+    alert('Digitar los campos de NombreProducto, precio y descripcion ') 
     return false 
   } 
   })

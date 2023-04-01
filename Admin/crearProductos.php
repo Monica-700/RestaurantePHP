@@ -3,7 +3,7 @@
      require_once('conexion.php');
      $conn =mysqli_connect($host, $user, $pw, $db);
      
-     $nombre=mysqli_real_escape_string($conn,$_REQUEST['nombreProducto'] ?? '');     
+     $nombreProducto=mysqli_real_escape_string($conn,$_REQUEST['nombreProducto'] ?? '');     
     // $isbn=mysqli_real_escape_string($conn,$_REQUEST['isbn'] ?? '');
      $precio=mysqli_real_escape_string($conn,$_REQUEST['precio'] ?? '');    
      $descripcion=mysqli_real_escape_string($conn,$_REQUEST['descripcion'] ?? '');
@@ -15,11 +15,11 @@
      //para evitar injection sql 
        if ($nombre !='' &&  $precio !='' && $verRow==null) {     
         $nom_archivo=$_FILES['file1']['name']; // Para conocer el nombre del archivo
-        $ruta = "Img/" . $nom_archivo;  // La ruta del archivo contiene el nuevo nombre y el tipo de extension
+        $ruta = "imagen/" . $nom_archivo;  // La ruta del archivo contiene el nuevo nombre y el tipo de extension
         $archivo = $_FILES['file1']['tmp_name']; //el arhivo a subir
         $subir=move_uploaded_file($archivo, $ruta); //se sube el archivo
         $sql="INSERT INTO productos(nombreProducto,precio,descripcion,imagen)
-        VALUES('".$nombre."','".$precio."','".$ruta."','".$descripcion."');";
+        VALUES('".$nombre."','".$precio."','".$descripcion."','".$ruta."',);";
 
         $result=mysqli_query($conn,$sql);
 
@@ -30,7 +30,7 @@
        ?>
 
          <div class="alert alert-danger" role="alert">
-            Error al crear usuario <?php echo mysqli_error($conn); ?>
+            Error al crear producto <?php echo mysqli_error($conn); ?>
          </div>
          <?php
         }
@@ -47,7 +47,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Crear productos</h1>
+            <h1>Crear producto</h1>
           </div><!-- /.col -->          
       </div><!-- /.container-fluid -->
     </div>
@@ -60,10 +60,10 @@
                 <div class="card">
           <!--crear usuario-->
                         <div class="card-body">
-                            <form action="panel.php?modulo=crearLibro" method="post" id="crearLibro" enctype="multipart/form-data">
+                            <form action="panel.php?modulo=crearProductos" method="post" id="crearProductos" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="Nombre">Nombre del producto</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
+                                <input type="text" name="nombreProducto" id="nombreProducto" class="form-control" placeholder="Nombre">
                             </div>
                             
                             <!--<div class="form-group">
