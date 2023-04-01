@@ -121,7 +121,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearProducto" || $modulo=="editarProductos")? " active":" ";?>">
+            <a href="panel.php?modulo=productos" class="nav-link <?php echo ($modulo=="productos" || $modulo=="crearProducto" || $modulo=="editarProducto")? " active":" ";?>">
              <i class="fas fa-book nav-icon"></i>
               <p>
                 Productos
@@ -174,7 +174,7 @@
       include_once "crearProductos.php";
     }
 
-    if($modulo=="editarProductos"){
+    if($modulo=="editarProducto"){
       include_once "editarproductos.php";
     }   
 
@@ -251,7 +251,7 @@ $('#crearProductos').submit(function(){
     $('#precio').val()=='' || 
     $('#descripcion').val()=='' 
       ){ 
-    alert('Digitar los campos de NombreProducto, precio y descripcion ') 
+    alert('Digitar los campos de Nombre, precio y descripcion del producto') 
     return false 
   } 
   })
@@ -262,7 +262,7 @@ $('#crearProductos').submit(function(){
   $(document).ready(function(){
     $(".borrar").click(function (e){
       e.preventDefault();
-      var eliminar=confirm("Desea eliminar el usuario?");
+      var eliminar=confirm("¿Desea eliminar el usuario?");
       if(eliminar==true){
         var link=$(this).attr("href");
         window.location=link;
@@ -278,7 +278,7 @@ $('#crearProductos').submit(function(){
   $(document).ready(function(){
     $(".borrarProducto").click(function (e){
       e.preventDefault();
-      var eliminar=confirm("Desea eliminar el Producto?");
+      var eliminar=confirm("¿Desea eliminar el Producto?");
       if(eliminar==true){
         var link=$(this).attr("href");
         window.location=link;

@@ -8,18 +8,18 @@
      $precio=mysqli_real_escape_string($conn,$_REQUEST['precio'] ?? '');    
      $descripcion=mysqli_real_escape_string($conn,$_REQUEST['descripcion'] ?? '');
 
-     $veriuser="SELECT * FROM productos WHERE nombre='" .$nombre."' OR descripcion='".$descripcion."';";
+     $veriuser="SELECT * FROM productos WHERE nombreProducto='" .$nombreProducto."' OR descripcion='".$descripcion."';";
      $verResult=$conn->query($veriuser);
      $verRow=$verResult->num_rows;
 
      //para evitar injection sql 
-       if ($nombre !='' &&  $precio !='' && $verRow==null) {     
+       if ($nombreProducto !='' &&  $precio !='' && $verRow==null) {     
         $nom_archivo=$_FILES['file1']['name']; // Para conocer el nombre del archivo
         $ruta = "imagen/" . $nom_archivo;  // La ruta del archivo contiene el nuevo nombre y el tipo de extension
         $archivo = $_FILES['file1']['tmp_name']; //el arhivo a subir
         $subir=move_uploaded_file($archivo, $ruta); //se sube el archivo
         $sql="INSERT INTO productos(nombreProducto,precio,descripcion,imagen)
-        VALUES('".$nombre."','".$precio."','".$descripcion."','".$ruta."',);";
+        VALUES('".$nombreProducto."','".$precio."','".$descripcion."','".$ruta."');";
 
         $result=mysqli_query($conn,$sql);
 
@@ -60,7 +60,7 @@
                 <div class="card">
           <!--crear usuario-->
                         <div class="card-body">
-                            <form action="panel.php?modulo=crearProductos" method="post" id="crearProductos" enctype="multipart/form-data">
+                            <form action="panel.php?modulo=crearProducto" method="post" id="crearProductos" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="Nombre">Nombre del producto</label>
                                 <input type="text" name="nombreProducto" id="nombreProducto" class="form-control" placeholder="Nombre">
